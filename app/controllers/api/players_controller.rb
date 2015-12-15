@@ -14,5 +14,9 @@ module API
       render json: player, status: :ok
     end
 
+    def create
+      Player.create!(name: params[:name], team: params[:team])
+      render json: 'success', status: :ok
+    end
   end
 end

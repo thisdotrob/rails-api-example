@@ -29,4 +29,10 @@ describe 'players' do
     expect(response.content_type).to eq(Mime::JSON)
   end
 
+  it 'creates a player', type: :request do
+    post api_players_path(name: 'Octo', team: 'Roma')
+    expect(response.status).to eq(200)
+    expect(Player.first.name).to eq('Octo')
+  end
+
 end
