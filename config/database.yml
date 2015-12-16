@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: poc_production
-  username: poc
-  password: <%= ENV['POC_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: poc_production
+  # username: poc
+  # password: <%= ENV['POC_DATABASE_PASSWORD'] %>
